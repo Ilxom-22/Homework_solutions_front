@@ -4,6 +4,13 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      sm: '545px',
+      md: '745px',
+      lg: '950px',
+      xl: '1440px',
+    },
+
     extend: {
       colors: {
         textPrimary: '#222222',
@@ -11,7 +18,9 @@ export default {
         logoSelected: '#000000',
         logoSecondary: '#717171',
         logoPrimary: '#ff385c',
-        logoAccent: '#ddddd'
+        logoAccent: '#ddddd',
+        defaultBackground: '#ffffff',
+        borderSecondary: '#cccccc'
       }
     },
   },
