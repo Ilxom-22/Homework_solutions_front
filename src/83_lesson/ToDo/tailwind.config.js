@@ -1,22 +1,21 @@
 export default {
   content: [
-    "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
+      "./index.html",
+      "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
-  
   theme: {
-    extend: {
-      colors: {
-        bgColor: '#FFFFFF',
-                bgColorDark: '#0f172a',
-                textColor: '#000000',
-                textColorDark: '#FFFFFF',
-                borderColor: '#E2E8F0',
-                borderColorDark: '#4A5568',
-                successColor: '#48BB78',
-                failedColor: '#F56565',
-      }
-    },
+      extend: {
+          colors: {
+              bgColor: '#f4f4f4',
+              bgColorDark: '#333333',
+              textColor: '#1c1c1c',
+              textColorDark: '#FFFFFF',
+              textSecondary: '#626262',
+              textSecondaryDark: '#d4d4d4',
+              successColor: '#48BB78',
+              failedColor: '#F56565',
+          }
+      },
   },
   plugins: [],
 }
