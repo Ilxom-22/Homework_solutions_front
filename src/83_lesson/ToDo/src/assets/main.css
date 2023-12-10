@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  body {
+    @apply bg-bgColor dark:bg-bgColorDark
+  }
+
+  h1, h2, h3, h4, h5, p, span {
+    @apply text-textColor dark:text-textColorDark
+  }
+}
