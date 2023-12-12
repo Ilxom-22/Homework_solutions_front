@@ -25,7 +25,7 @@
   }
   
   .simple-hover {
-    @apply transition-opacity duration-300 hover:opacity-0 group-hover:opacity-100;
+    @apply transition-opacity duration-300 opacity-0 hover:opacity-100;
   }
 
   .input {

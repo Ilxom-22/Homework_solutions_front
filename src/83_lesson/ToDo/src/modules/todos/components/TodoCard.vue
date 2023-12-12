@@ -3,9 +3,12 @@
     <div class="flex justify-between w-full p-1 px-3 border rounded-md h-14 task-background theme-text">
        
        <div class="flex gap-x-4">
+        
              <!-- Primary Action -->
             <div class="flex items-center">
-                <button class="w-5 h-5 border-2 rounded-full theme-border">
+                <button class="flex items-center justify-center w-5 h-5 border-2 rounded-full theme-border" @click="toggleIsDone">
+                    <i class="fa-solid fa-check simple-hover" 
+                    :class="{ 'text-successColor opacity-100': todo.isDone, 'text-failedColor': !todo.isDone && (todo.dueTime < Date.now()), }"></i>
                 </button>  
             </div>
 
@@ -32,7 +35,7 @@
                 <i class="fa-solid fa-pen-to-square"></i>
             </button>
 
-            <button>
+            <button @click="OnDeleteAsync">
                 <i class="fa-solid fa-trash"></i>
             </button>
         </div>
@@ -45,9 +48,13 @@
 </template>
 
 <script setup lang="ts">
+import { TodoApiClient } from '@/infrastructure/apiClients/todoApiClient/brokers/TodoApiClient';
 import type { ToDoItem } from '../models/ToDoItem';
 import { DateFormatter } from "@/infrastructure/services/DateFormatter"
+import type { Guid } from 'guid-typescript';
+import { emitKeypressEvents } from 'readline';
 
+const todoApiClient = new TodoApiClient();
 
 const props = defineProps({
     todo: {
@@ -55,5 +62,25 @@ const props = defineProps({
         required: true
     }
 });
+
+const emit = defineEmits<{
+    editTodo: [id: Guid],
+    deleteTodo: [id: Guid]
+}>();
+
+const toggleIsDone = async () => {
+    todo.value.isDone = !todo.value.isDone;
+}
+
+const onEdit = () => {
+    emit("editTodo", props.todo?.id);
+}
+
+const OnDeleteAsync = async () => {
+    const response = await todoApiClient.todos.deleteByIdAsync(props.todo.id);
+
+    if (response.IsSuccess)
+        emits("deleteTodo", props.todo.id);
+}
 
 </script>

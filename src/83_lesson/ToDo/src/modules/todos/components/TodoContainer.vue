@@ -5,7 +5,7 @@
          <todo-list :todos="todos"/>
 
         <!-- Add New Task -->
-        <new-todo-form/>
+        <new-todo-form @add-new-todo="onAddTodo"/>
     </div>
    
 
@@ -32,6 +32,11 @@ const loadTodosAsync = async () => {
         todos.value = todosResponse.response;
     }
 }
+
+const onAddTodo = (todo: ToDoItem) => {
+    todos.value.push(todo);
+}
+
 
 
 
