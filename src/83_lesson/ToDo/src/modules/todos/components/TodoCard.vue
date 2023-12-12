@@ -11,7 +11,7 @@
 
             <!-- Details -->
             <div class="">
-                <h5 class="theme-text">Task</h5>
+                <h5 class="theme-text">{{todo.title}}</h5>
                 
                 <div class="flex gap-2 text-sm theme-textSecondary">
                     <p class="opacity-80">Sunday</p>
@@ -43,3 +43,16 @@
     </div>
 
 </template>
+
+<script setup lang="ts">
+import type { ToDoItem } from '../models/ToDoItem';
+
+
+const props = defineProps({
+    todo: {
+        type: Object as () => ToDoItem,
+        required: true
+    }
+});
+
+</script>
