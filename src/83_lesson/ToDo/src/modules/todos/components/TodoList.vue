@@ -3,7 +3,7 @@
     <div class="flex flex-col gap-3 overflow-x-scroll no-scrollbar">
         
         <!-- Tasks -->
-        <todo-card v-for="todo in todos" :todo="todo" :key="todo.id" @delete-todo="onDeleteTodo"/>
+        <todo-card v-for="todo in todos" :todo="todo" :key="todo.id" @edit-todo="onEditTodo" @delete-todo="onDeleteTodo"/>
   
         
     </div>
@@ -23,6 +23,14 @@ const props = defineProps({
         required: true
     }
 })
+
+const emit = defineEmits<{
+    editTodo: [id: Guid]
+}>();
+
+const onEditTodo = (id: Guid) => {
+    emit("editTodo", id);
+}
 
 const onDeleteTodo = (id: Guid) => {
     const index = props.todos.findIndex(x => x.id === id);

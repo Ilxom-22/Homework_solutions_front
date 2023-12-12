@@ -31,7 +31,7 @@
                 <i class="fa-solid fa-star"></i>
             </button>
 
-            <button>
+            <button @click="onEdit">
                 <i class="fa-solid fa-pen-to-square"></i>
             </button>
 
@@ -52,7 +52,6 @@ import { TodoApiClient } from '@/infrastructure/apiClients/todoApiClient/brokers
 import type { ToDoItem } from '../models/ToDoItem';
 import { DateFormatter } from "@/infrastructure/services/DateFormatter"
 import type { Guid } from 'guid-typescript';
-import { emitKeypressEvents } from 'readline';
 
 const todoApiClient = new TodoApiClient();
 
@@ -63,7 +62,7 @@ const props = defineProps({
     }
 });
 
-const emit = defineEmits<{
+const emits = defineEmits<{
     editTodo: [id: Guid],
     deleteTodo: [id: Guid]
 }>();
@@ -73,7 +72,7 @@ const toggleIsDone = async () => {
 }
 
 const onEdit = () => {
-    emit("editTodo", props.todo?.id);
+    emits("editTodo", props.todo?.id);
 }
 
 const OnDeleteAsync = async () => {
