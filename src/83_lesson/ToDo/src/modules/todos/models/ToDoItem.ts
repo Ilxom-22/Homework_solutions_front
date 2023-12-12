@@ -27,5 +27,4 @@ export class ToDoItem implements IMappable<ToDoItem>{
 
         return this;
     }
-
 }
