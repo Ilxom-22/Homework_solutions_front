@@ -1,6 +1,7 @@
 <template>
 
   <div>
+    
     <home-view/>
 
   </div>

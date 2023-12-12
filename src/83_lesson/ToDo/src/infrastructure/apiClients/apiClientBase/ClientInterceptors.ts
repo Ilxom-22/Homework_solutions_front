@@ -1,4 +1,4 @@
-import type { Axios, AxiosInstance, AxiosError, AxiosResponse } from "axios";
+import type { AxiosInstance, AxiosError, AxiosResponse } from "axios";
 import type { IMappable } from "@/infrastructure/mappers/IMappable";
 import { ProblemDetails } from "./ProblemDetails";
 import { ApiResponse } from "./ApiResponse";
