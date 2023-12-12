@@ -14,9 +14,9 @@
                 <h5 class="theme-text">{{todo.title}}</h5>
                 
                 <div class="flex gap-2 text-sm theme-textSecondary">
-                    <p class="opacity-80">Sunday</p>
+                    <p class="opacity-80">{{ DateFormatter.formatHumanize(todo.dueTime) }}</p>
                     <span class="opacity-50">•</span>
-                    <p class="opacity-40">10pm</p>
+                    <p class="opacity-40">{{ DateFormatter.formatHumanize(todo.reminderTime) }}</p>
                 </div>
             </div>
        </div>
@@ -46,6 +46,7 @@
 
 <script setup lang="ts">
 import type { ToDoItem } from '../models/ToDoItem';
+import { DateFormatter } from "@/infrastructure/services/DateFormatter"
 
 
 const props = defineProps({
