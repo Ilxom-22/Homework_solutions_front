@@ -12,7 +12,7 @@ export class ToDoItem implements IMappable<ToDoItem>{
     title!: string;
     notes!: string;
     isDone!: boolean;
-    isFavourite!: boolean;
+    isFavorite!: boolean;
     dueTime!: Date;
     reminderTime!: Date;
 
@@ -21,7 +21,7 @@ export class ToDoItem implements IMappable<ToDoItem>{
         this.title = object.title;
         this.notes = object.notes;
         this.isDone = object.isDone;
-        this.isFavourite = object.isFavourite;
+        this.isFavorite = object.isFavourite;
         this.dueTime = new Date(object.dueTime);
         this.reminderTime = new Date(object.reminderTime);
 
