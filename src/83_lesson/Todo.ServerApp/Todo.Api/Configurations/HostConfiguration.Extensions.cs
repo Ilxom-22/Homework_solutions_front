@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using Todo.Application.Todos.Services;
+using Todo.Infrastructure.Todos.Services;
 using Todo.Persistence.DataContexts;
 using Todo.Persistence.Repositories;
 using Todo.Persistence.Repositories.Interfaces;
@@ -35,7 +36,7 @@ public static partial class HostConfiguration
     private static WebApplicationBuilder AddTodosServices(this WebApplicationBuilder builder)
     {
         builder.Services.AddScoped<ITodoRepository, TodoRepository>();
-        builder.Services.AddScoped<ITodoService, ITodoService>();
+        builder.Services.AddScoped<ITodoService, TodoService>();
 
         return builder;
     }
