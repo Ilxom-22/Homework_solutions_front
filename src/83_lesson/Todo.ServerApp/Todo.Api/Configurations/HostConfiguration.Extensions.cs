@@ -24,6 +24,8 @@ public static partial class HostConfiguration
 
     private static WebApplicationBuilder AddMappers(this WebApplicationBuilder builder)
     {
+        builder.Services.AddAutoMapper(Assemblies);
+
         return builder;
     }
 
