@@ -8,6 +8,7 @@ public static partial class HostConfiguration
             .AddMappers()
             .AddValidators()
             .AddBusinessLogicInfrastructure()
+            .AddDbContext()
             .AddCors()
             .AddExposers()
             .AddDevTools();

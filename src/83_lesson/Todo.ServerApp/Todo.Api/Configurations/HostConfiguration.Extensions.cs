@@ -1,4 +1,7 @@
-﻿using System.Reflection;
+﻿using FluentValidation;
+using Microsoft.EntityFrameworkCore;
+using System.Reflection;
+using Todo.Persistence.DataContexts;
 
 namespace ToDo.Api.Configurations;
 
@@ -14,6 +17,8 @@ public static partial class HostConfiguration
 
     private static WebApplicationBuilder AddValidators(this WebApplicationBuilder builder)
     {
+        builder.Services.AddValidatorsFromAssemblies(Assemblies);
+
         return builder;
     }
 
@@ -24,6 +29,14 @@ public static partial class HostConfiguration
 
     private static WebApplicationBuilder AddBusinessLogicInfrastructure(this WebApplicationBuilder builder)
     {
+        return builder;
+    }
+
+    private static WebApplicationBuilder AddDbContext(this WebApplicationBuilder builder)
+    {
+        builder.Services.AddDbContext<AppDbContext>(options => options
+            .UseNpgsql(builder.Configuration.GetConnectionString("AppDatabaseConnection")));
+
         return builder;
     }
 
