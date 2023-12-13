@@ -1,7 +1,10 @@
 <template>
 
     <div>
+        <!-- Header -->
         <main-header/>
+
+        <!-- Content -->
     </div>
 
 </template>
