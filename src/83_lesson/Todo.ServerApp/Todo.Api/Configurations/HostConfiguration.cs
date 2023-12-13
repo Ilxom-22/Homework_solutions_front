@@ -7,8 +7,8 @@ public static partial class HostConfiguration
         builder
             .AddMappers()
             .AddValidators()
-            .AddBusinessLogicInfrastructure()
             .AddDbContext()
+            .AddTodosServices()
             .AddCors()
             .AddExposers()
             .AddDevTools();
@@ -19,7 +19,7 @@ public static partial class HostConfiguration
     public static ValueTask<WebApplication> ConfigureAsync(this WebApplication app)
     {
         app.UseCors();
-        app.UseExposers().UseDevTools();
+        app.UseExposers();
 
         return new(app);
     }

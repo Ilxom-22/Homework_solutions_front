@@ -1,7 +1,10 @@
 ﻿using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
+using Todo.Application.Todos.Services;
 using Todo.Persistence.DataContexts;
+using Todo.Persistence.Repositories;
+using Todo.Persistence.Repositories.Interfaces;
 
 namespace ToDo.Api.Configurations;
 
@@ -29,8 +32,11 @@ public static partial class HostConfiguration
         return builder;
     }
 
-    private static WebApplicationBuilder AddBusinessLogicInfrastructure(this WebApplicationBuilder builder)
+    private static WebApplicationBuilder AddTodosServices(this WebApplicationBuilder builder)
     {
+        builder.Services.AddScoped<ITodoRepository, TodoRepository>();
+        builder.Services.AddScoped<ITodoService, ITodoService>();
+
         return builder;
     }
 
@@ -44,6 +50,9 @@ public static partial class HostConfiguration
 
     private static WebApplicationBuilder AddExposers(this WebApplicationBuilder builder)
     {
+        builder.Services.AddRouting(options => options.LowercaseUrls = true);
+        builder.Services.AddControllers();
+
         return builder;
     }
 
@@ -73,11 +82,6 @@ public static partial class HostConfiguration
     {
         app.MapControllers();
 
-        return app;
-    }
-
-    private static WebApplication UseDevTools(this WebApplication app)
-    {
         return app;
     }
 }
