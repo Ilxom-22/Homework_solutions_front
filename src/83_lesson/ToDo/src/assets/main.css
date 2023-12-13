@@ -20,6 +20,10 @@
     @apply text-textColor dark:text-textColorDark
   }
 
+  .theme-icon {
+    @apply opacity-100 hover:opacity-60
+  }
+
   .theme-textSecondary {
     @apply text-textSecondary dark:text-textSecondaryDark
   }

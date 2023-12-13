@@ -35,15 +35,15 @@
         <!-- Secondary Actions -->
         
         <div class="flex text-lg gap-x-2">
-            <button @click="toggleIsFavourite">
+            <button @click="toggleIsFavourite" class="theme-icon">
                 <i class="fa-regular fa-star" :class="todo.isFavorite ? 'fa-solid' : 'fa-regular'"></i>
             </button>
 
-            <button @click="onEdit">
+            <button @click="onEdit" class="theme-icon">
                 <i class="fa-solid fa-pen-to-square"></i>
             </button>
 
-            <button @click="OnDeleteAsync">
+            <button @click="OnDeleteAsync" class="theme-icon">
                 <i class="fa-solid fa-trash"></i>
             </button>
         </div>
