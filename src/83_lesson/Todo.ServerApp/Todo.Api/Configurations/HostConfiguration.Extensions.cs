@@ -48,8 +48,14 @@ public static partial class HostConfiguration
     private static WebApplicationBuilder AddCors(this WebApplicationBuilder builder)
     {
         builder.Services.AddCors(
-            options => { options.AddDefaultPolicy(policyBuilder => { policyBuilder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader(); }); }
-        );
+            options => { options.AddDefaultPolicy(policyBuilder => 
+            { 
+                policyBuilder
+                    .AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader(); 
+            }); 
+        });
 
         return builder;
     }
