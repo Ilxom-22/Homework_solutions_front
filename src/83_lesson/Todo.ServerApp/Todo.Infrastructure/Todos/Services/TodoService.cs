@@ -3,6 +3,7 @@ using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Todo.Application.Todos.Services;
 using Todo.Domain.Entities;
+using Todo.Domain.Enums;
 using Todo.Persistence.Repositories.Interfaces;
 
 namespace Todo.Infrastructure.Todos.Services;
@@ -39,7 +40,7 @@ public class TodoService(ITodoRepository todoRepository, IValidator<TodoItem> to
 
     public ValueTask<TodoItem> CreateAsync(TodoItem todoItem, bool saveChanges = true, CancellationToken cancellationToken = default)
     {
-        var validationResult = todoValidator.Validate(todoItem);
+        var validationResult = todoValidator.Validate(todoItem, options => options.IncludeRuleSets(EntityEvent.OnCreate.ToString()));
         if (!validationResult.IsValid)
             throw new ValidationException(validationResult.Errors);
         
@@ -50,7 +51,7 @@ public class TodoService(ITodoRepository todoRepository, IValidator<TodoItem> to
 
     public ValueTask<bool> UpdateAsync(TodoItem todoItem, CancellationToken cancellationToken = default)
     {
-        var validationResult = todoValidator.Validate(todoItem);
+        var validationResult = todoValidator.Validate(todoItem, options => options.IncludeRuleSets(EntityEvent.OnUpdate.ToString()));
         if (!validationResult.IsValid)
             throw new ValidationException(validationResult.Errors);
 
