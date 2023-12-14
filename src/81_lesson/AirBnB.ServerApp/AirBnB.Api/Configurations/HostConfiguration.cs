@@ -7,7 +7,7 @@ public static partial class HostConfiguration
         builder
             .AddMappers()
             .AddValidators()
-            .AddBusinessLogicInfrastructure()
+            .AddLocationsInfrastructure()
             .AddCors()
             .AddExposers()
             .AddDevTools();

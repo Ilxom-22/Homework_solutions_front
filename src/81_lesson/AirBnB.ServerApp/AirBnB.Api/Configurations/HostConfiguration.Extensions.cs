@@ -1,4 +1,6 @@
-﻿using System.Reflection;
+using AirBnB.Persistence.DataContexts;
+using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace ToDo.Api.Configurations;
 
@@ -47,6 +49,14 @@ public static partial class HostConfiguration
     private static WebApplicationBuilder AddDevTools(this WebApplicationBuilder builder)
     {
         builder.Services.AddEndpointsApiExplorer();
+
+        return builder;
+    }
+
+    private static WebApplicationBuilder AddLocationsInfrastructure(this WebApplicationBuilder builder)
+    {
+        builder.Services.AddDbContext<LocationsDataContext>(options =>
+            options.UseNpgsql(builder.Configuration.GetConnectionString("AppDatabaseConnection")));
 
         return builder;
     }
