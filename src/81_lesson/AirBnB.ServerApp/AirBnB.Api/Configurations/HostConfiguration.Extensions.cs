@@ -1,3 +1,5 @@
+using AirBnB.Application.Locations;
+using AirBnB.Infrastructure.Locations;
 using AirBnB.Persistence.DataContexts;
 using AirBnB.Persistence.Repositories;
 using AirBnB.Persistence.Repositories.Interfaces;
@@ -63,6 +65,8 @@ public static partial class HostConfiguration
 
         builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
         builder.Services.AddScoped<ILocationRepository, LocationRepository>();
+
+        builder.Services.AddScoped<ICategoryService, CategoryService>();
 
         return builder;
     }
