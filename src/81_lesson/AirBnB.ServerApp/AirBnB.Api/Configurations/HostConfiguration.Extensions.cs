@@ -1,4 +1,6 @@
 using AirBnB.Persistence.DataContexts;
+using AirBnB.Persistence.Repositories;
+using AirBnB.Persistence.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -58,6 +60,8 @@ public static partial class HostConfiguration
     {
         builder.Services.AddDbContext<LocationsDataContext>(options =>
             options.UseNpgsql(builder.Configuration.GetConnectionString("AppDatabaseConnection")));
+
+        builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 
         return builder;
     }
