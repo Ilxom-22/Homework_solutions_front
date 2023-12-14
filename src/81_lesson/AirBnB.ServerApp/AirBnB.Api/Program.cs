@@ -1,4 +1,4 @@
-using ToDo.Api.Configurations;
+using AirBnB.Api.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 

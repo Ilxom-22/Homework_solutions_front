@@ -1,8 +1,8 @@
-using AirBnB.Persistence.DataContexts;
+﻿using AirBnB.Persistence.DataContexts;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
-namespace ToDo.Api.Configurations;
+namespace AirBnB.Api.Configurations;
 
 public static partial class HostConfiguration
 {
@@ -24,11 +24,6 @@ public static partial class HostConfiguration
         return builder;
     }
 
-    private static WebApplicationBuilder AddBusinessLogicInfrastructure(this WebApplicationBuilder builder)
-    {
-        return builder;
-    }
-
     private static WebApplicationBuilder AddExposers(this WebApplicationBuilder builder)
     {
         builder.Services.AddRouting(options => options.LowercaseUrls = true);
@@ -40,8 +35,14 @@ public static partial class HostConfiguration
     private static WebApplicationBuilder AddCors(this WebApplicationBuilder builder)
     {
         builder.Services.AddCors(
-            options => { options.AddDefaultPolicy(policyBuilder => { policyBuilder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader(); }); }
-        );
+            options => { options.AddDefaultPolicy(policyBuilder =>
+            { 
+                policyBuilder
+                    .AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+            }); 
+        });
 
         return builder;
     }

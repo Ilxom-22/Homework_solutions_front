@@ -1,4 +1,4 @@
-﻿namespace ToDo.Api.Configurations;
+﻿namespace AirBnB.Api.Configurations;
 
 public static partial class HostConfiguration
 {
