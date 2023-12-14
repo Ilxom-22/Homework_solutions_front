@@ -18,13 +18,10 @@ public static partial class HostConfiguration
         Assemblies.Add(Assembly.GetExecutingAssembly());
     }
 
-    private static WebApplicationBuilder AddValidators(this WebApplicationBuilder builder)
-    {
-        return builder;
-    }
-
     private static WebApplicationBuilder AddMappers(this WebApplicationBuilder builder)
     {
+        builder.Services.AddAutoMapper(Assemblies);
+
         return builder;
     }
 
@@ -54,6 +51,7 @@ public static partial class HostConfiguration
     private static WebApplicationBuilder AddDevTools(this WebApplicationBuilder builder)
     {
         builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddSwaggerGen();
 
         return builder;
     }
@@ -81,6 +79,9 @@ public static partial class HostConfiguration
 
     private static WebApplication UseDevTools(this WebApplication app)
     {
+        app.UseSwagger();
+        app.UseSwaggerUI();
+
         return app;
     }
 }

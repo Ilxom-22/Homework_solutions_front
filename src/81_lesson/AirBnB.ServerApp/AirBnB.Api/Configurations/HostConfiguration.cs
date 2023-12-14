@@ -6,7 +6,6 @@ public static partial class HostConfiguration
     {
         builder
             .AddMappers()
-            .AddValidators()
             .AddLocationsInfrastructure()
             .AddCors()
             .AddExposers()
