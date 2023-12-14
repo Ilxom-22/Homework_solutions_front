@@ -62,6 +62,7 @@ public static partial class HostConfiguration
             options.UseNpgsql(builder.Configuration.GetConnectionString("AppDatabaseConnection")));
 
         builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+        builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 
         return builder;
     }
