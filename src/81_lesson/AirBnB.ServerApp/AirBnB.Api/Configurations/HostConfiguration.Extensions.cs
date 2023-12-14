@@ -1,4 +1,4 @@
-﻿using AirBnB.Persistence.DataContexts;
+using AirBnB.Persistence.DataContexts;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
