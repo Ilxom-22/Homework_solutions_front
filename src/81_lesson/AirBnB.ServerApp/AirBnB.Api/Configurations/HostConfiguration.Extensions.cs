@@ -67,6 +67,7 @@ public static partial class HostConfiguration
         builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 
         builder.Services.AddScoped<ICategoryService, CategoryService>();
+        builder.Services.AddScoped<ILocationService, LocationService>();
 
         return builder;
     }
