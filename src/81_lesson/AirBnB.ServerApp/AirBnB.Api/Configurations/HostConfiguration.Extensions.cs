@@ -3,6 +3,7 @@ using AirBnB.Infrastructure.Locations;
 using AirBnB.Persistence.DataContexts;
 using AirBnB.Persistence.Repositories;
 using AirBnB.Persistence.Repositories.Interfaces;
+using AirBnB.Persistence.SeedData;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -70,9 +71,18 @@ public static partial class HostConfiguration
         return builder;
     }
 
+    private static async ValueTask<WebApplication> AddSeedDataAsync(this WebApplication app)
+    {
+        var serviceScope = app.Services.CreateScope();
+        await serviceScope.ServiceProvider.InitializeSeedDataAsync();
+
+        return app;
+    }
+
     private static WebApplication UseExposers(this WebApplication app)
     {
         app.MapControllers();
+        app.UseStaticFiles();
 
         return app;
     }
