@@ -1,9 +1,10 @@
+using AirBnB.Api.Settings;
 using AirBnB.Application.Locations;
 using AirBnB.Infrastructure.Locations;
 using AirBnB.Persistence.DataContexts;
 using AirBnB.Persistence.Repositories;
 using AirBnB.Persistence.Repositories.Interfaces;
-using AirBnB.Persistence.SeedData;
+using AirBnB.Persistence.SeedData.Services;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -30,6 +31,8 @@ public static partial class HostConfiguration
     {
         builder.Services.AddRouting(options => options.LowercaseUrls = true);
         builder.Services.AddControllers();
+
+        builder.Services.Configure<ApiSettings>(builder.Configuration.GetSection(nameof(ApiSettings)));
 
         return builder;
     }
