@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="SeedData\Locations\" />
     <Folder Include="wwwroot\" />
     <Folder Include="SeedData\LocationCategories\" />
   </ItemGroup>
