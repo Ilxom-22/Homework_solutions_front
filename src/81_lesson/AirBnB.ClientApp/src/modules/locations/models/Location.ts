@@ -1,7 +1,7 @@
 export class Location {
+    public id!: Guid
     public name!: string;
     public imageUrl!: string;
-    public pricePerNight!: number;
-    public builtYear!: number;
+    public price!: number;
     public rating!: number;
 }
