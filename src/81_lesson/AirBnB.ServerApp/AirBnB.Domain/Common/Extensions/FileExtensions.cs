@@ -2,5 +2,8 @@
 
 public static class FileExtensions
 {
-    public static string ToUrl(this string filePath, string? prefix) => $"{prefix ?? string.Empty}/{filePath.Replace(@"wwwroot\", "").Replace(@"\", "/")}";
+    public static string ToUrl(this string filePath, string prefix = "") => 
+        $"{prefix}/{filePath
+            .Replace(@"wwwroot\", "")
+            .Replace(@"\", "/")}";
 }
