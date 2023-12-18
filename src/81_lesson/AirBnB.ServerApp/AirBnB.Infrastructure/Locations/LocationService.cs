@@ -14,6 +14,11 @@ public class LocationService(ILocationRepository locationRepository) : ILocation
             .OrderBy(location => location.Rating);
     }
 
+    public IQueryable<Location> GetByCategoryId(Guid categoryId, bool asNoTracking = false)
+    {
+        return locationRepository.Get(location => location.CategoryId == categoryId, asNoTracking);
+    }
+
     public ValueTask<Location?> GetByIdAsync(Guid id, bool asNoTracking = false, CancellationToken cancellationToken = default)
     {
         return locationRepository.GetByIdAsync(id, asNoTracking, cancellationToken);
