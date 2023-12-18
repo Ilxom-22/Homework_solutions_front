@@ -17,8 +17,6 @@ public static class SeedDataExtensions
         {
             await locationDatabase.InitializeCategoriesAsync();
         }
-
-        await locationDatabase.InitializeCategoriesAsync();
     }
 
     private static async ValueTask InitializeCategoriesAsync(this LocationsDataContext dbContext)
