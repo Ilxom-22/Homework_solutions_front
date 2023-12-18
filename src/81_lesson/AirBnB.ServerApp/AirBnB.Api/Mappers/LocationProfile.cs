@@ -8,6 +8,6 @@ public class LocationProfile : Profile
 {
     public LocationProfile()
     {
-        CreateMap<Location, LocationDto>().ReverseMap();
+        CreateMap<Location, LocationDto>().ForMember(dest => dest.Price, src => src.MapFrom(src => src.PricePerNight * 5));
     }
 }
