@@ -5,8 +5,8 @@
     
     <!-- Location Header -->
     <div class="relative w-full h-auto overflow-hidden aspect-square rounded-xl">
-        <img class="object-cover h-full"
-            src="https://a0.muscache.com/im/pictures/miso/Hosting-852899544635683289/original/c627f47e-8ca9-4471-90d4-1fd987dd2362.jpeg?im_w=720"
+        <img class="object-cover w-full h-full"
+            :src="location.imageUrl"
             alt="">
             
         <button class="absolute top-4 right-3">
@@ -23,11 +23,10 @@
         
         <!-- About -->
         <div class="basis-2/3">
-            <h5 class="font-medium line-clamp-1">Dahab, Egypt</h5>
-            <p class="text-textSecondary line-clamp-1">Built in 2020</p>
-            <p class="text-textSecondary line-clamp-1">Dec 1-6</p>
-            <h5>
-                <strong>$1,183</strong> total
+            <h5 class="font-medium line-clamp-1">{{ location.name }}</h5>
+            <p class="text-textSecondary line-clamp-1">1-6 Dec</p>
+            <h5 class="underline">
+                <strong>{{ `$${location.price}` }}</strong> total
             </h5>
         </div>
         
@@ -39,7 +38,7 @@
                     <path fill-rule="evenodd"
                         d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path>
                 </svg>
-                <span>4.58</span>
+                <span>{{ location.rating }}</span>
             </div> 
         </div>  
         
@@ -47,3 +46,17 @@
 </div>
 
 </template>
+
+<script setup lang="ts">
+
+import type { Location } from '../models/Location';
+
+
+const props = defineProps({
+   location: {
+        type: Object as () => Location,
+        required: true
+   } 
+});
+
+</script>
