@@ -2,35 +2,35 @@
   {
     "Name": "Balian Beach, Indonesia",
     "ImageUrl": "https://a0.muscache.com/im/pictures/7cc3c855-f90e-4d0f-9b13-3b5c2a3c4bad.jpg?im_w=720",
-    "Price": 554,
+    "Price": 555,
     "Rating": 4.86,
     "Category": "Trending"
   },
   {
-    "Name": "L�hnberg, Germany",
+    "Name": "Löhnberg, Germany",
     "ImageUrl": "https://a0.muscache.com/im/pictures/84e37632-d467-45a8-89cb-a2b1aac82898.jpg?im_w=720",
-    "Price": 649,
+    "Price": 650,
     "Rating": 4.96,
     "Category": "Trending"
   },
   {
     "Name": "Pierantonio, Italy",
     "ImageUrl": "https://a0.muscache.com/im/pictures/2d502704-5db1-47c0-bfee-3816d04743fb.jpg?im_w=720",
-    "Price": 708,
+    "Price": 710,
     "Rating": 4.97,
     "Category": "Trending"
   },
   {
     "Name": "Lac-Beauport, Canada",
     "ImageUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-46695796/original/38bc8081-9415-453a-b8bf-9f4aeb146819.jpeg?im_w=720",
-    "Price": 2015,
+    "Price": 2014,
     "Rating": 4.98,
     "Category": "Trending"
   },
   {
     "Name": "Hella, Iceland",
     "ImageUrl": "https://a0.muscache.com/im/pictures/ade2f12c-d3b2-4c66-9b0d-39fa8a772c9e.jpg?im_w=720",
-    "Price": 3977,
+    "Price": 3984,
     "Rating": 4.97,
     "Category": "Trending"
   },
@@ -49,17 +49,17 @@
     "Category": "Trending"
   },
   {
+    "Name": "Ponta Delgada, Portugal",
+    "ImageUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-5264493/original/10d2c21f-84c2-46c5-b20b-b51d1c2c971a.jpeg?im_w=720",
+    "Price": 1092,
+    "Rating": 4.93,
+    "Category": "Trending"
+  },
+  {
     "Name": "Remsen, New York, US",
     "ImageUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-628302769213986431/original/e10af9f5-7fff-4561-9466-0c0fc3995509.jpeg?im_w=720",
     "Price": 3502,
     "Rating": 5,
-    "Category": "Trending"
-  },
-  {
-    "Name": "Ponta Delgada, Portugal",
-    "ImageUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-5264493/original/10d2c21f-84c2-46c5-b20b-b51d1c2c971a.jpeg?im_w=720",
-    "Price": 1090,
-    "Rating": 4.93,
     "Category": "Trending"
   },
   {
@@ -72,7 +72,7 @@
   {
     "Name": "Oia, Greece",
     "ImageUrl": "https://a0.muscache.com/im/pictures/51f4d564-3273-4f25-843d-54e17f6a8783.jpg?im_w=720",
-    "Price": 1873,
+    "Price": 1877,
     "Rating": 4.96,
     "Category": "Trending"
   },
@@ -86,8 +86,15 @@
   {
     "Name": "Kerhonkson, New York, US",
     "ImageUrl": "https://a0.muscache.com/im/pictures/cd96b8b7-43c6-4030-8d70-22a78d419e4d.jpg?im_w=720",
-    "Price": 1669,
+    "Price": 1461,
     "Rating": 4.92,
+    "Category": "Trending"
+  },
+  {
+    "Name": "Blue Ridge, Georgia, US",
+    "ImageUrl": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-52254969/original/c05e0cff-3eb8-43a7-babe-8bdf4ee645e5.jpeg?im_w=720",
+    "Price": 1184,
+    "Rating": 4.94,
     "Category": "Trending"
   },
   {
@@ -98,45 +105,38 @@
     "Category": "Trending"
   },
   {
-    "Name": "Blue Ridge, Georgia, US",
-    "ImageUrl": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-52254969/original/c05e0cff-3eb8-43a7-babe-8bdf4ee645e5.jpeg?im_w=720",
-    "Price": 1118,
-    "Rating": 4.94,
-    "Category": "Trending"
-  },
-  {
     "Name": "Ravenswood, Australia",
     "ImageUrl": "https://a0.muscache.com/im/pictures/0fe76007-93a4-405d-a155-cb29adf5ed2d.jpg?im_w=720",
-    "Price": 987,
+    "Price": 968,
     "Rating": 4.99,
     "Category": "Trending"
   },
   {
     "Name": "Wensleydale, Australia",
     "ImageUrl": "https://a0.muscache.com/im/pictures/a9a5e884-0ce4-442d-9348-a5bd130e8811.jpg?im_w=720",
-    "Price": 4726,
+    "Price": 4731,
     "Rating": 4.99,
     "Category": "Trending"
   },
   {
     "Name": "Fintown, Ireland",
     "ImageUrl": "https://a0.muscache.com/im/pictures/9f1c5c97-e718-4ae3-8412-e1db905c10e4.jpg?im_w=720",
-    "Price": 541,
+    "Price": 543,
     "Rating": 4.99,
     "Category": "Trending"
   },
   {
-    "Name": "B�rglen, Switzerland",
-    "ImageUrl": "https://a0.muscache.com/im/pictures/953dbee9-ec7d-4608-96c1-11a0e8544b64.jpg?im_w=720",
-    "Price": 1333,
-    "Rating": 4.99,
-    "Category": "Trending"
-  },
-  {
-    "Name": "B�, Nordland, Norway",
+    "Name": "Bø, Nordland, Norway",
     "ImageUrl": "https://a0.muscache.com/im/pictures/181d4be2-6cb2-4306-94bf-89aa45c5de66.jpg?im_w=720",
-    "Price": 765,
+    "Price": 769,
     "Rating": 4.84,
+    "Category": "Trending"
+  },
+  {
+    "Name": "Bürglen, Switzerland",
+    "ImageUrl": "https://a0.muscache.com/im/pictures/953dbee9-ec7d-4608-96c1-11a0e8544b64.jpg?im_w=720",
+    "Price": 1335,
+    "Rating": 4.99,
     "Category": "Trending"
   }
 ]
