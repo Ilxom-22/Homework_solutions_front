@@ -20,5 +20,15 @@ public class LocationsController(ILocationService locationService, IMapper mappe
         result.ForEach(location => location.ImageUrl = location.ImageUrl.ToUrl(apiSettings.Value.BaseUrl));
 
         return new(Ok(result));
-    } 
+    }
+
+    [HttpGet]
+    public ValueTask<IActionResult> GetLocations()
+    {
+        var result = locationService.Get().Select(mapper.Map<LocationDto>).ToList();
+
+        result.ForEach(location => location.ImageUrl = location.ImageUrl.ToUrl(apiSettings.Value.BaseUrl));
+
+        return new(Ok(result));
+    }
 }
