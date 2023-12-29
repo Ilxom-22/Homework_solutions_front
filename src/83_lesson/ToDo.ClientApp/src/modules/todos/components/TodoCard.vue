@@ -21,12 +21,12 @@
                 <div class="flex gap-2 text-sm theme-textSecondary">
                     <p class="opacity-80" :class="{'text-red-500': isOverdue}">
                         <i class="mr-1 fa-regular fa-calendar" :class="{'text-red-500': isOverdue}"></i>
-                        {{ DateFormatter.formatHumanize(todo.dueTime) }}
+                        {{ dateFormatter.formatHumanize(todo.dueTime) }}
                     </p>
                     <span class="opacity-50">•</span>
                     <p class="opacity-40">
                         <i class="mr-1 fa-regular fa-bell"></i>
-                        {{ DateFormatter.formatHumanize(todo.reminderTime) }}
+                        {{ dateFormatter.formatHumanize(todo.reminderTime) }}
                     </p>
                 </div>
             </div>
@@ -58,12 +58,13 @@
 <script setup lang="ts">
 import { TodoApiClient } from '@/infrastructure/apiClients/todoApiClient/brokers/TodoApiClient';
 import type { ToDoItem } from '../models/ToDoItem';
-import { DateFormatter } from "@/infrastructure/services/DateFormatter"
+import { DateTimeFormatterService } from "@/infrastructure/services/DateCalculatorService"
 import type { Guid } from 'guid-typescript';
 import { Utils } from "@/infrastructure/extensions/ObjectExtensions";
 import { computed } from "vue";
 
 const todoApiClient = new TodoApiClient();
+const dateFormatter = new DateTimeFormatterService();
 
 const props = defineProps({
     todo: {
