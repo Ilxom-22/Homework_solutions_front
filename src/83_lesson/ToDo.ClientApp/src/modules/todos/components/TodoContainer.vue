@@ -36,12 +36,14 @@ const loadTodosAsync = async () => {
 }
 
 const onAddTodo = (todo: ToDoItem) => {
-    todos.value.push(todo);
+    const index = todos.value.findIndex(element => element.dueTime > todo.dueTime && !element.isDone);
+    if (index !== -1) todos.value.splice(index, 0, todo);
+    else todos.value.unshift(todo);
 }
 
 const onEditTodo = (id: Guid) => {
     const todo = todos.value.find(x => x.id === id);
-
+    
     if (todo) {
         editTodo.value = todo;
     }

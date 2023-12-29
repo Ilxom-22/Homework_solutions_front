@@ -3,8 +3,7 @@
     <div class="flex flex-col gap-3 overflow-x-scroll no-scrollbar">
         
         <!-- Tasks -->
-        <todo-card v-for="todo in todos" :todo="todo" :key="todo.id" @edit-todo="onEditTodo" @delete-todo="onDeleteTodo"/>
-  
+        <todo-card v-for="todo in todos" :todo="todo" :key="todo.id.toString" @edit-todo="onEditTodo" @delete-todo="onDeleteTodo"/>
         
     </div>
 
