@@ -11,19 +11,29 @@
     <div class="flex gap-x-4">
 
         <!-- Due time picker -->
-        <button class="relative flex items-center justify-center text-2xl" @click="toggleDueTimePicker">
-            <i class="mr-1 fa-regular btn-hover fa-calendar theme-text theme-icon"></i>
-            <v-date-picker v-if="showDueTimePicker" v-model="todo.dueTime" class="absolute z-20"/>
-        </button>
+        <date-time-picker class="absolute bottom-0 right-0 z-20"
+                                  v-if="showDueTimePicker"
+                                  @onClose="toggleDueTimePicker"
+                                  :min-date="minDate"
+                                  v-model="todo.dueTime"/>
+                <button ref="dueTimeButton" type="button" class="relative flex items-center justify-center text-2xl"
+                        @click="toggleDueTimePicker">
+                    <i class="mr-1 fa-regular btn-hover fa-calendar theme-text theme-icon"></i>
+                </button>
 
         <!-- Reminder time picker -->
-        <button class="relative flex items-center justify-center text-2xl" @click="toggleReminderTimePicker">
-            <i class="mr-1 fa-regular btn-hover fa-bell theme-text theme-icon"></i>
-            <v-date-picker v-if="showReminderTimePicker" v-model="todo.reminderTime" class="absolute z-20"/>
-        </button>
+        <date-time-picker class="absolute bottom-0 right-0 z-20"
+                                  v-if="showReminderTimePicker"
+                                  @onClose="toggleReminderTimePicker"
+                                  :min-date="minDate"
+                                  :max-date="todo.dueTime"
+                                  v-model="todo.reminderTime"/>
+                <button type="button" class="relative flex items-center justify-center text-2xl"
+                        @click="toggleReminderTimePicker">
+                    <i class="mr-1 fa-regular btn-hover fa-bell theme-text theme-icon"></i>
+                </button>
 
-        <button type="submit" class="theme-text theme-icon">Submit</button>
-
+        <button type="submit" class="theme-text theme-icon" @click="submitAsync">Submit</button>
     </div>
 
 </v-form>
@@ -37,6 +47,7 @@ import { TodoApiClient } from '@/infrastructure/apiClients/todoApiClient/brokers
 import { ToDoItem } from '../models/ToDoItem';
 import { ref, watch } from 'vue';
 import { Utils } from '@/infrastructure/extensions/ObjectExtensions';
+import DateTimePicker from "@/common/components/DateTimePicker.vue";
 
 
 const todoApiClient = new TodoApiClient();
@@ -44,6 +55,7 @@ const todo = ref<ToDoItem>(new ToDoItem());
 const isEditing = ref<boolean>(false);
 const showDueTimePicker = ref<boolean>(false);
 const showReminderTimePicker = ref<boolean>(false);
+const minDate = new Date();
 
 const props = defineProps({
     editTodo: {
